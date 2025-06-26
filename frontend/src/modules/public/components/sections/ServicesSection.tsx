@@ -47,7 +47,7 @@ const ServicesSection = () => {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20 md:mb-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-zinc-900 font-[var(--font-poppins)] leading-[0.9] mb-8"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-zinc-900 font-[var(--font-poppins)] leading-[0.9] mb-6"
             >
               LO QUE<br />
               HACEMOS<br />
@@ -72,7 +72,7 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl text-zinc-600 font-[var(--font-sora)] leading-relaxed"
+              className="text-lg text-zinc-600 font-[var(--font-sora)] leading-relaxed"
             >
               Combinamos creatividad de barrio con estrategia que funciona en la calle y en la oficina.
             </motion.p>
@@ -88,76 +88,73 @@ const ServicesSection = () => {
             <img 
               src="/brandido.png" 
               alt="Brandido" 
-              className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain drop-shadow-2xl"
+              className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 object-contain drop-shadow-2xl"
             />
           </motion.div>
         </div>
 
-        <div className="space-y-20 md:space-y-24">
+        <div className="space-y-8 md:space-y-10">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: service.delay }}
+              transition={{ duration: 0.6, delay: service.delay }}
               className="group relative"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
                 
-                {/* Número grande */}
-                <div className="lg:col-span-2">
+                <div className="lg:col-span-1 flex justify-center lg:justify-start">
                   <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="flex items-center justify-center lg:justify-start"
+                    whileHover={{ scale: 1.1 }}
+                    className="flex items-center justify-center"
                   >
-                    <span className="text-7xl md:text-8xl lg:text-9xl font-black text-zinc-100 group-hover:text-lime-100 transition-colors duration-500 font-[var(--font-poppins)]">
+                    <span className="text-4xl md:text-5xl font-black text-zinc-200 group-hover:text-lime-200 transition-colors duration-300 font-[var(--font-poppins)]">
                       {service.number}
                     </span>
                   </motion.div>
                 </div>
 
-                {/* Contenido principal */}
-                <div className="lg:col-span-7 space-y-6">
+                <div className="lg:col-span-8 space-y-4">
                   <motion.h3
-                    whileHover={{ x: 8 }}
-                    transition={{ duration: 0.3 }}
-                    className="text-3xl md:text-4xl lg:text-5xl font-black text-zinc-900 leading-tight font-[var(--font-poppins)] whitespace-pre-line group-hover:text-zinc-700 transition-colors duration-300"
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2 }}
+                    className="text-2xl md:text-3xl font-black text-zinc-900 leading-tight font-[var(--font-poppins)] whitespace-pre-line group-hover:text-zinc-700 transition-colors duration-300"
                   >
                     {service.title}
                   </motion.h3>
                   
-                  <p className="text-lg md:text-xl text-zinc-600 leading-relaxed font-[var(--font-sora)]">
+                  <p className="text-base text-zinc-600 leading-relaxed font-[var(--font-sora)]">
                     {service.description}
                   </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                  <div className="flex flex-wrap gap-x-4 gap-y-2">
                     {service.features.map((feature, featureIndex) => (
                       <motion.div
                         key={feature}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: service.delay + (featureIndex * 0.1) }}
-                        className="flex items-center text-sm text-zinc-500 font-medium bg-zinc-50 px-4 py-3 rounded-lg border border-zinc-100 group-hover:bg-lime-50 group-hover:border-lime-200 transition-all duration-300"
+                        transition={{ duration: 0.3, delay: service.delay + (featureIndex * 0.1) }}
+                        className="flex items-center text-sm text-zinc-500 font-medium"
                       >
-                        <div className="w-2 h-2 bg-lime-400 rounded-full mr-3 flex-shrink-0"></div>
+                        <div className="w-1.5 h-1.5 bg-lime-400 rounded-full mr-2 flex-shrink-0"></div>
                         {feature}
                       </motion.div>
                     ))}
                   </div>
                 </div>
 
-                {/* Icono */}
                 <div className="lg:col-span-3 flex justify-center lg:justify-end">
                   <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.3, type: "spring", bounce: 0.4 }}
-                    className="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 border-3 border-zinc-200 group-hover:border-lime-300 rounded-2xl flex items-center justify-center transition-all duration-300 bg-white shadow-lg group-hover:shadow-xl"
+                    whileHover={{ scale: 1.05, rotate: 2 }}
+                    transition={{ duration: 0.2 }}
+                    className="w-16 h-16 md:w-18 md:h-18 border-2 border-zinc-200 group-hover:border-lime-300 rounded-xl flex items-center justify-center transition-all duration-300 bg-white shadow-md group-hover:shadow-lg"
                   >
                     <service.icon 
-                      className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-zinc-400 group-hover:text-lime-400 transition-colors duration-300" 
-                      strokeWidth={1}
+                      className="w-8 h-8 md:w-9 md:h-9 text-zinc-400 group-hover:text-lime-400 transition-colors duration-300" 
+                      strokeWidth={1.2}
                     />
                   </motion.div>
                 </div>
@@ -168,8 +165,8 @@ const ServicesSection = () => {
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, delay: service.delay + 0.4 }}
-                  className="w-full h-px bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-200 mt-20 md:mt-24 origin-center"
+                  transition={{ duration: 0.6, delay: service.delay + 0.3 }}
+                  className="w-full h-px bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-200 mt-8 md:mt-10 origin-center"
                 />
               )}
             </motion.div>
@@ -181,7 +178,7 @@ const ServicesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-24 md:mt-32"
+          className="text-center mt-16 md:mt-20"
         >
           <motion.button
             whileHover={{ 

@@ -3,6 +3,8 @@ import Lenis from '@studio-freight/lenis';
 import Navbar from '../components/layout/Navbar';
 import Hero from '../components/sections/HeroSection';
 import ServicesSection from '../components/sections/ServicesSection';
+import PortfolioSection from '../components/sections/PortfolioSection';
+import FloatingButtons from '../components/ui/FloatingButtons';
 
 const Homepage = () => {
   const lenisRef = useRef<Lenis | null>(null);
@@ -34,6 +36,8 @@ const Homepage = () => {
       <Navbar />
       <Hero />
       <ServicesSection />
+      <FloatingButtons />
+      <PortfolioSection />
     </div>
   );
 };
