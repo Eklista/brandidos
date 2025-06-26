@@ -6,7 +6,7 @@ const ServicesSection = () => {
     {
       icon: Palette,
       title: "BRANDING &\nDISEÑO",
-      description: "Creamos marcas que no se olvidan. Tu identidad visual va a hablar más fuerte que la competencia.",
+      description: "Creamos marcas que conectan de verdad. Tu identidad visual va a destacar sin gritar.",
       features: ["Identidad Visual", "Logo Design", "Brand Guidelines"],
       delay: 0.1,
       number: "01."
@@ -14,7 +14,7 @@ const ServicesSection = () => {
     {
       icon: Layers,
       title: "UX/UI\nDESIGN",
-      description: "Interfaces que la gente entiende sin manual. Diseño que funciona en la calle y en la oficina.",
+      description: "Interfaces que fluyen natural. Diseño que funciona para todos, sin complicaciones.",
       features: ["User Research", "Wireframing", "UI Design"],
       delay: 0.2,
       number: "02."
@@ -22,7 +22,7 @@ const ServicesSection = () => {
     {
       icon: Monitor,
       title: "DISEÑO\nWEB",
-      description: "Sitios que cargan rápido y se ven brutales en cualquier pantalla. Sin trucos, puro resultado.",
+      description: "Sitios que cargan rápido y se ven sólidos en cualquier pantalla. Directo al punto.",
       features: ["Diseño Responsive", "Landing Pages", "E-commerce"],
       delay: 0.3,
       number: "03."
@@ -74,7 +74,7 @@ const ServicesSection = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg text-zinc-600 font-[var(--font-sora)] leading-relaxed"
             >
-              Combinamos creatividad de barrio con estrategia que funciona en la calle y en la oficina.
+              Creatividad que conecta con estrategia que funciona. Simple pero efectivo.
             </motion.p>
           </motion.div>
 
@@ -86,7 +86,7 @@ const ServicesSection = () => {
             className="flex justify-center lg:justify-end"
           >
             <img 
-              src="/brandido.png" 
+              src="/brandido.webp" 
               alt="Brandido" 
               className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 object-contain drop-shadow-2xl"
             />

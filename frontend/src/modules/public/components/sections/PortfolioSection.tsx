@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Eye } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const PortfolioSection = () => {
   const projects = [
@@ -7,60 +7,54 @@ const PortfolioSection = () => {
       id: 1,
       title: "Fintech Centroamericana",
       category: "UX/UI Design",
-      description: "Dashboard de inversiones que convirtió números aburridos en algo que hasta tu tía entiende.",
+      description: "Dashboard que convierte data compleja en decisiones claras",
       image: "/project-fintech.jpg",
-      tags: ["Dashboard", "Mobile App", "Web Platform"],
-      color: "from-blue-500 to-cyan-500",
+      tags: ["Dashboard", "Mobile App"],
       delay: 0.1
     },
     {
       id: 2,
       title: "E-commerce de Moda",
       category: "Branding & Web",
-      description: "De tienda de barrio a imperio digital. Rebrand que triplicó ventas sin perder la esencia.",
+      description: "Rebrand que triplicó ventas sin perder la esencia",
       image: "/project-ecommerce.jpg",
-      tags: ["Rebranding", "E-commerce", "Mobile"],
-      color: "from-purple-500 to-pink-500",
+      tags: ["Rebranding", "E-commerce"],
       delay: 0.2
     },
     {
       id: 3,
       title: "Plataforma Educativa",
       category: "UX/UI Design",
-      description: "App que hace que estudiar no sea un castigo. Interface que habla el idioma de los chavos.",
+      description: "App que hace el aprendizaje más directo",
       image: "/project-education.jpg",
-      tags: ["Mobile App", "User Research", "Prototyping"],
-      color: "from-green-500 to-emerald-500",
+      tags: ["Mobile App", "Research"],
       delay: 0.3
     },
     {
       id: 4,
       title: "Startup de Logística",
       category: "Brand Identity",
-      description: "Identidad visual que comunica eficiencia sin ser aburrida. Logo que se ve brutal en camiones y pantallas.",
+      description: "Identidad que funciona en pantalla y en la calle",
       image: "/project-logistics.jpg",
-      tags: ["Logo Design", "Brand Guidelines", "Vehicle Graphics"],
-      color: "from-orange-500 to-red-500",
+      tags: ["Logo Design", "Branding"],
       delay: 0.4
     },
     {
       id: 5,
       title: "Restaurant Chain",
       category: "Digital Experience",
-      description: "Sistema de pedidos que eliminó las colas y la desesperación. De menú de papel a experiencia digital sin drama.",
+      description: "Sistema que eliminó colas y simplificó pedidos",
       image: "/project-restaurant.jpg",
-      tags: ["Ordering System", "Kiosk Design", "Mobile"],
-      color: "from-yellow-500 to-orange-500",
+      tags: ["Ordering System", "Kiosks"],
       delay: 0.5
     },
     {
       id: 6,
       title: "SaaS Healthcare",
       category: "Dashboard Design",
-      description: "Interface médica que salva tiempo y vidas. Complejidad de hospital convertida en simplicidad callejera.",
+      description: "Interface médica convertida en flujo simple",
       image: "/project-healthcare.jpg",
-      tags: ["Complex Data", "Medical UI", "Accessibility"],
-      color: "from-teal-500 to-blue-500",
+      tags: ["Complex Data", "Medical UI"],
       delay: 0.6
     }
   ];
@@ -74,24 +68,24 @@ const PortfolioSection = () => {
             scale: [1, 1.1, 1]
           }}
           transition={{ 
-            duration: 20,
+            duration: 25,
             repeat: Infinity,
             ease: "linear"
           }}
-          className="absolute top-10 right-10 w-32 h-32 border border-lime-200 rounded-lg opacity-20"
+          className="absolute top-16 right-16 w-24 h-24 border border-lime-200/30 rounded-lg opacity-40"
           style={{ transform: 'rotate(12deg)' }}
         />
         <motion.div
           animate={{ 
-            y: [0, -20, 0],
-            opacity: [0.1, 0.2, 0.1]
+            y: [0, -15, 0],
+            opacity: [0.1, 0.3, 0.1]
           }}
           transition={{ 
-            duration: 8,
+            duration: 6,
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute bottom-20 left-20 w-2 h-2 bg-lime-400 rounded-sm"
+          className="absolute bottom-32 left-16 w-2 h-2 bg-lime-400 rounded-sm"
         />
       </div>
 
@@ -121,11 +115,11 @@ const PortfolioSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl text-zinc-600 max-w-2xl mx-auto font-[var(--font-sora)] leading-relaxed"
           >
-            Mantenemos la discreción, pero los resultados gritan solos en la calle.
+            Proyectos que hablan por sí solos. Resultados que se notan desde el primer día.
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project) => (
             <motion.div
               key={project.id}
@@ -133,61 +127,90 @@ const PortfolioSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: project.delay }}
-              className="group relative"
+              className="group cursor-pointer"
             >
               <motion.div
-                whileHover={{ y: -8, rotate: -0.5 }}
-                transition={{ duration: 0.3, type: "spring" }}
-                className="bg-white rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 border border-zinc-200 group-hover:border-lime-300"
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ duration: 0.4, type: "spring", bounce: 0.1 }}
+                className="relative h-96 rounded-2xl overflow-hidden bg-zinc-900 shadow-lg hover:shadow-2xl transition-shadow duration-500"
               >
-                <div className="relative overflow-hidden h-64">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-90`} />
-                  
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute inset-0 flex items-center justify-center backdrop-blur-sm"
-                  >
-                    <div className="text-center text-white p-6">
-                      <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4 backdrop-blur-sm border border-white/30">
-                        <Eye className="w-8 h-8" />
-                      </div>
-                      <h4 className="text-lg font-bold mb-2 uppercase tracking-wide">{project.category}</h4>
-                      <p className="text-sm opacity-90 font-medium">Ver proyecto</p>
-                    </div>
-                  </motion.div>
+                <div 
+                  className="absolute inset-0 bg-gradient-to-br from-zinc-800 via-zinc-700 to-zinc-900"
+                  style={{
+                    backgroundImage: `url(${project.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                />
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute inset-0 bg-lime-400/10"
+                />
 
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1, rotate: 5 }}
-                    className="absolute top-4 right-4 w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm border border-white/30"
-                  >
-                    <ArrowUpRight className="w-5 h-5 text-white" />
-                  </motion.div>
-                </div>
-
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl font-black text-zinc-900 font-[var(--font-poppins)] group-hover:text-zinc-700 transition-colors">
-                      {project.title}
-                    </h3>
-                  </div>
-                  
-                  <p className="text-zinc-600 text-sm leading-relaxed mb-4 font-[var(--font-sora)]">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 bg-zinc-100 text-zinc-600 text-xs font-medium rounded-full border border-zinc-200"
-                      >
-                        {tag}
+                <div className="absolute inset-0 p-6 flex flex-col justify-between">
+                  <div className="flex justify-between items-start">
+                    <motion.div
+                      initial={{ opacity: 0.7 }}
+                      whileHover={{ opacity: 1, scale: 1.05 }}
+                      className="bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/30"
+                    >
+                      <span className="text-white text-xs font-medium uppercase tracking-wide">
+                        {project.category}
                       </span>
-                    ))}
+                    </motion.div>
+                    
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ duration: 0.2 }}
+                      className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 group-hover:bg-lime-400/80 group-hover:border-lime-400 transition-all duration-300"
+                    >
+                      <ArrowUpRight className="w-5 h-5 text-white group-hover:text-zinc-900 transition-colors duration-300" />
+                    </motion.div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2.5 py-1 bg-white/10 backdrop-blur-sm text-white/80 text-xs font-medium rounded-lg border border-white/20"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="space-y-2">
+                      <motion.h3
+                        whileHover={{ x: 2 }}
+                        transition={{ duration: 0.2 }}
+                        className="text-xl md:text-2xl font-black text-white font-[var(--font-poppins)] leading-tight"
+                      >
+                        {project.title}
+                      </motion.h3>
+                      
+                      <motion.p
+                        initial={{ opacity: 0.8 }}
+                        whileHover={{ opacity: 1 }}
+                        className="text-white/90 text-sm font-[var(--font-sora)] leading-relaxed"
+                      >
+                        {project.description}
+                      </motion.p>
+                    </div>
                   </div>
                 </div>
+
+                <motion.div
+                  initial={{ scale: 1, opacity: 0 }}
+                  whileHover={{ scale: 1.02, opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute inset-0 rounded-2xl border-2 border-lime-400/30 pointer-events-none"
+                />
               </motion.div>
             </motion.div>
           ))}
@@ -207,7 +230,7 @@ const PortfolioSection = () => {
               y: -2
             }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center px-12 py-5 bg-zinc-900 hover:bg-lime-400 hover:text-zinc-900 text-white font-bold text-lg rounded-xl transition-all duration-300 border-2 border-transparent hover:border-zinc-900 shadow-lg"
+            className="inline-flex items-center px-12 py-5 bg-zinc-900 hover:bg-lime-400 hover:text-zinc-900 text-white font-bold text-lg rounded-2xl transition-all duration-300 border-2 border-transparent hover:border-zinc-900 shadow-lg font-[var(--font-poppins)]"
           >
             <span>Ver más proyectos</span>
             <ArrowUpRight className="w-5 h-5 ml-2" />
@@ -220,7 +243,7 @@ const PortfolioSection = () => {
             transition={{ duration: 0.6, delay: 0.9 }}
             className="text-zinc-500 mt-6 text-base font-[var(--font-sora)]"
           >
-            ¿Tu proyecto va a ser el próximo en romperla?
+            ¿Listo para que tu proyecto sea el próximo?
           </motion.p>
         </motion.div>
       </div>

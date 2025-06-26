@@ -4,6 +4,9 @@ import Navbar from '../components/layout/Navbar';
 import Hero from '../components/sections/HeroSection';
 import ServicesSection from '../components/sections/ServicesSection';
 import PortfolioSection from '../components/sections/PortfolioSection';
+import StreetDivider from '../components/ui/StreetDivider';
+import FAQSection from '../components/sections/FAQSection';
+import FooterWithCTA from '../components/sections/FooterSection';
 import FloatingButtons from '../components/ui/FloatingButtons';
 
 const Homepage = () => {
@@ -34,10 +37,23 @@ const Homepage = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
+      <div id="inicio" className="relative">
       <Hero />
+      </div>
+      <div id="servicios" className="relative">
       <ServicesSection />
-      <FloatingButtons />
+      </div>
+      <StreetDivider />
+      <div id="proyectos" className="relative">
       <PortfolioSection />
+      </div>
+      <StreetDivider />
+      <div id="faq" className="relative">
+      <FAQSection />
+      </div>
+      <FooterWithCTA />
+
+      <FloatingButtons />
     </div>
   );
 };
